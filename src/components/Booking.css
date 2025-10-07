@@ -1,10 +1,23 @@
 .booking {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--background-light) 0%, var(--background-cream) 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.booking .section-title h1 {
-  color: #d4af37;
+.booking::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.booking .section-title h2 {
+  color: var(--primary-gold);
 }
 
 .booking-content {
@@ -12,24 +25,27 @@
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .booking-info h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: 25px;
 }
 
 .booking-info p {
   font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #555;
+  margin-bottom: 35px;
+  color: var(--text-light);
+  line-height: 1.8;
 }
 
 .booking-benefits {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 25px;
+  gap: 30px;
   margin: 40px 0;
 }
 
@@ -38,32 +54,54 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: white;
+  border-radius: var(--border-radius-small);
+  padding: 30px;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-fast);
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
 }
 
 .benefit-icon {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-gold);
+  transition: transform var(--transition-fast);
+}
+
+.benefit-item:hover .benefit-icon {
+  transform: scale(1.1);
 }
 
 .benefit-item h3 {
-  color: #d4af37;
-  margin-bottom: 10px;
+  color: var(--primary-gold);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
 .booking-cta {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .booking-btn {
-  padding: 15px 40px;
+  padding: 18px 45px;
   font-size: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.booking-btn:hover {
+  transform: scale(1.05) translateY(-5px);
 }
 
 .redirect-info {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #777;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: var(--text-lighter);
 }
 
 .booking-image {
@@ -74,22 +112,59 @@
 
 .image-placeholder {
   width: 100%;
-  height: 400px;
-  background: linear-gradient(45deg, #d4af37, #f9f9f9);
-  border-radius: 15px;
+  height: 450px;
+  background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-cream) 100%);
+  border-radius: var(--border-radius-medium);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: rotate(30deg);
 }
 
 .image-placeholder p {
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: var(--text-dark);
   font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-light);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .booking-content {
+    gap: 40px;
+  }
+  
+  .image-placeholder {
+    height: 400px;
+  }
+  
+  .image-placeholder p {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .booking {
+    padding: 70px 0;
+  }
+  
   .booking-content {
     grid-template-columns: 1fr;
   }
@@ -99,6 +174,49 @@
   }
   
   .image-placeholder {
+    height: 350px;
+  }
+  
+  .booking-info h2 {
+    font-size: 1.8rem;
+  }
+  
+  .benefit-item {
+    padding: 25px;
+  }
+  
+  .benefit-icon {
+    font-size: 3rem;
+  }
+  
+  .booking-btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-placeholder {
     height: 300px;
+  }
+  
+  .image-placeholder p {
+    font-size: 1.4rem;
+  }
+  
+  .booking-benefits {
+    gap: 20px;
+  }
+  
+  .benefit-item {
+    padding: 20px;
+  }
+  
+  .benefit-icon {
+    font-size: 2.5rem;
+  }
+  
+  .benefit-item h3 {
+    font-size: 1.2rem;
   }
 }
