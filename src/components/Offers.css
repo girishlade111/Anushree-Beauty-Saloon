@@ -1,0 +1,155 @@
+.offers {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fff5f5 0%, #faf0e6 100%);
+}
+
+.offers .section-title h1 {
+  color: #d4af37;
+}
+
+.offer-validity {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d40000;
+  margin-top: 10px;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.offer-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-10px);
+}
+
+.offer-badge {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: #d40000;
+  color: white;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.offer-header {
+  background: linear-gradient(45deg, #d4af37, #f9f9f9);
+  padding: 25px;
+  text-align: center;
+}
+
+.offer-header h2 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.offer-prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d40000;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.offer-features {
+  list-style: none;
+  padding: 25px;
+}
+
+.offer-features li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  position: relative;
+  padding-left: 25px;
+}
+
+.offer-features li:last-child {
+  border-bottom: none;
+}
+
+.offer-features li::before {
+  content: '✓';
+  color: #d4af37;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.offer-btn {
+  display: block;
+  text-align: center;
+  margin: 0 25px 25px;
+  padding: 12px;
+}
+
+.offer-terms {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+}
+
+.offer-terms h3 {
+  color: #d4af37;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.offer-terms ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.offer-terms ul li {
+  padding: 10px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.offer-terms ul li::before {
+  content: '•';
+  color: #d4af37;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .offer-badge {
+    right: -25px;
+    padding: 3px 25px;
+    font-size: 0.7rem;
+  }
+}
