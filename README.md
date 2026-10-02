@@ -121,3 +121,7 @@ npm run build
 ## 📄 License
 
 This project is proprietary to Anushree Beauty Saloon.
+
+## 👤 Author
+
+Built by [Girish Lade](https://ladestack.in) — founder of [LadeStack](https://ladestack.in).
